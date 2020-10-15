@@ -1,62 +1,71 @@
 <template>
   <div>
+    <div class="main__navigation">
+      <h1 style="font-family: 'Nunito'">CareerCraft</h1>
+      <div class="main__navigation-menu">
+        <ul>
+          <li>Home <img src="@/assets/icons/icon-vector.png" alt=""></li>
+          <li>About</li>
+          <li>Candidates <img src="@/assets/icons/icon-vector.png" alt=""></li>
+          <li>Companies <img src="@/assets/icons/icon-vector.png" alt=""></li>
+          <li>Blog</li>
+        </ul>
+        <div>
+          <button @click="postJob" class="btn-post">POST A JOB</button>
+          <button @click="login" class="btn-login">LOGIN</button>
+        </div>
+      </div>
+    </div>
     <Nuxt />
   </div>
 </template>
 
-<style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<script>
+export default {
+  name: "MainNavigation",
+  methods: {
+    postJob() {
+      // this.$router.push({ name:  })
+    },
+    login() {
+      this.$router.push({ name: "Login" });
+    }
+  }
+};
+</script>
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+<style scoped>
+.main__navigation {
+  display: flex;
+  height: 8vh;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: auto;
 }
-
-.button--green {
+ul {
+  list-style: none;
+}
+li {
   display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+  padding: 10px;
+  font-size: 23px;
+  color: black;
+  font-weight: 550;
+  cursor: pointer;
+  border-radius: 10px;
 }
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+li:hover {
+  background: blue;
+  color: white;
 }
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.main__navigation-menu {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+img {
+  padding-bottom: 5px;
 }
 </style>
