@@ -16,6 +16,12 @@ export default {
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Manjari&display=swap'
+      },
+      {
+        rel:"stylesheet",
+        href:"https://pro.fontawesome.com/releases/v5.10.0/css/all.css",
+        integrity:"sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p",
+        crossorigin: 'anonymous'
       }
     ]
   },
@@ -26,6 +32,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+
+    // { src: '~/plugins/progressStep.js', ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -47,6 +55,5 @@ export default {
   axios: {},
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-  }
+  build: {}
 }

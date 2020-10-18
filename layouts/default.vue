@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="main__navigation">
-      <h1 style="font-family: 'Nunito'">CareerCraft</h1>
+      <h1 style="font-family: 'Nunito'"><router-link to="/">CareerCraft</router-link></h1>
       <div class="main__navigation-menu">
         <ul>
           <li>Home <img src="@/assets/icons/icon-vector.png" alt=""></li>
@@ -12,7 +12,7 @@
         </ul>
         <div>
           <button @click="postJob" class="btn-post">POST A JOB</button>
-          <button @click="login" class="btn-login">LOGIN</button>
+          <button class="btn-login"><nuxt-link to="/login">LOGIN</nuxt-link></button>
         </div>
       </div>
     </div>
@@ -67,5 +67,9 @@ li:hover {
 }
 img {
   padding-bottom: 5px;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 </style>

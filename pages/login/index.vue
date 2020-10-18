@@ -1,0 +1,144 @@
+<template>
+  <div class="login">
+    <div class="container">
+      <h1 id="title">Login into your personal account</h1>
+
+      <div id="login-form">
+        <h1>Login</h1>
+        <hr>
+        <div class="login-content">
+
+          <div class="login-fields">
+            <div class="login-field">
+              <label for="login">USERNAME OR EMAIL</label>
+              <input id="login" type="email" placeholder="Enter your username or email address">
+            </div>
+            <div class="login-field">
+              <label for="password">PASSWORD</label>
+              <input type="password" placeholder="Enter your password" id="password">
+            </div>
+            <div class="login-end">
+              <p><input type="checkbox">Remember me</p>
+              <p style="color: gray">Forgot password?</p>
+            </div>
+            <button class="btn-login">LOGIN</button>
+          </div>
+
+          <div class="login-links">
+            <div class="login-link">
+              LOGIN VIA SOCIAL LINKS
+              <div class="login-links-icons">
+                <img src="~@/assets/icons/Google.svg" alt="">
+                <img src="~@/assets/icons/Facebook.svg" alt="">
+                <img src="~@/assets/icons/Mail.ru.svg" alt="">
+              </div>
+            </div>
+
+            <div class="login-link">
+              REGISTRATION
+              <div>
+                <button class="btn-reg">APPLICANT</button>
+                <button class="btn-reg">EMPLOYER</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "index"
+}
+</script>
+
+<style scoped>
+  .login {
+    background: #F0F3FA;
+    height: 92vh;
+  }
+  .container {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #title {
+    margin: 80px 0;
+  }
+  #login-form {
+    width: 900px;
+    background: white;
+    margin: 0 auto;
+    text-align: left;
+    border-radius: 5px;
+  }
+  #login-form > h1 {
+    padding: 0 30px;
+    margin: 30px 0 20px 0;
+  }
+  .login-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+  }
+  .login-fields {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-field {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-field > label {
+    color: rgba(99, 114, 155, 1);
+    padding: 10px 0;
+    font-weight: 700;
+    font-family: 'Nunito';
+  }
+  .login-field > input {
+    width: 370px;
+    height: 30px;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 3px;
+  }
+  .login-end {
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn-login {
+    width: 100px;
+    height: 40px;
+    color: white;
+    background: rgba(15, 143, 238, 1);
+    border: none;
+    border-radius: 30px;
+  }
+  .login-links {
+    width: 370px;
+  }
+  .login-links-icons > img {
+    height: 40px;
+    padding: 5px 10px 5px 0 ;
+  }
+  .login-link {
+    color: rgba(99, 114, 155, 1);
+    font-weight: 700;
+    padding: 10px 0;
+  }
+  .btn-reg {
+    color: #888888;
+    font-weight: 700;
+    background: #ededed;
+    padding: 10px 25px;
+    margin: 5px 10px 0 0;
+    border: none;
+    border-radius: 4px;
+  }
+</style>
