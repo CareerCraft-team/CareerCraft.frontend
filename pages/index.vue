@@ -10,7 +10,6 @@ export default {
   components: {MainSearch}
 }
 </script>
-
 <style>
  body {
    margin: 0;
