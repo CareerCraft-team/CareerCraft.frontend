@@ -115,13 +115,12 @@ export default {
 .step-progress__step {
   z-index: 2;
   position: relative;
-  --activeColor: red;
   --passiveColor: grey;
   --activeBorder: 5px;
   --passiveBorder: 5px;
 }
 .step-progress__step span {
-  color: var(--passiveColor);
+  color: black;
   transition: 0.3s ease;
   display: block;
   font-size: 26px;
@@ -137,7 +136,7 @@ export default {
 }
 .step-progress__step--active .step-progress__step-label,
 .step-progress__step--active span {
-  color: var(--activeColor);
+  color: white;
 }
 .step-progress__step--active .step-progress__step-icon {
   opacity: 1;
@@ -147,7 +146,7 @@ export default {
   transform: translate3d(-50%, -50%, 0) scale(1) perspective(1000px);
 }
 .step-progress__step--valid span {
-  color: var(--activeColor);
+  color: white;
   opacity: 0;
   transform: translateZ(0) scale(2) perspective(1000px);
 }
@@ -177,6 +176,7 @@ export default {
 .step-progress__step--active:after,
 .step-progress__step--valid:after {
   border: var(--activeBorder) solid var(--activeColor);
+  background: blue;
 }
 .step-progress__step--valid:after {
   background-color: var(--activeColor);
