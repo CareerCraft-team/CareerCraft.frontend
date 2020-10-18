@@ -11,7 +11,7 @@
           <li>Blog</li>
         </ul>
         <div>
-          <button @click="postJob" class="btn-post">POST A JOB</button>
+          <button class="btn-post"><nuxt-link to="/post">POST A JOB</nuxt-link></button>
           <button class="btn-login"><nuxt-link to="/login">LOGIN</nuxt-link></button>
         </div>
       </div>
@@ -71,5 +71,27 @@ img {
 a {
   text-decoration: none;
   color: black;
+}
+.btn-post {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding: 10px;
+  border: none;
+  color: white;
+  background: #285CE0;
+}
+.btn-login {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 10px;
+  border: none;
+  color: white;
+  background: #285CE0;
+}
+.btn-post > a {
+  color: white;
+}
+.btn-login > a {
+  color: white;
 }
 </style>

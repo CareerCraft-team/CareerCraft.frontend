@@ -81,7 +81,7 @@ export default {
 
 <style scoped>
 .step-progress__wrapper {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
 }

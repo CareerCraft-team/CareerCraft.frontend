@@ -1,23 +1,25 @@
 <template>
-  <div>
-    <h1>Post a Job</h1>
-    <p>Step {{ current }}: {{ currentMessage }}</p>
-        <client-only>
-          <div style="height: 100px; width: 400px">
-            <ProgressBar
-              :steps="[1, 2, 3, 4]"
-              :current-step="current-1"
-              :active-color="'#1650E2'"
-              :active-thickness="2"
-              :line-thickness="5"
-              :passive-color="'#A0A7BA'"
-            />
-          </div>
-        </client-only>
+  <div class="post">
+    <div class="content">
+      <h1>Post a Job</h1>
+      <p>Step {{ current }}: {{ currentMessage }}</p>
+          <client-only>
+            <div style="height: 100px; width: 600px">
+              <ProgressBar
+                :steps="[1, 2, 3, 4]"
+                :current-step="current-1"
+                :active-color="'#1650E2'"
+                :active-thickness="2"
+                :line-thickness="5"
+                :passive-color="'#A0A7BA'"
+              />
+            </div>
+          </client-only>
 
-        <component :is="currentComponent"></component>
-    <button v-show="current > 1" @click="current-=1">prev</button>
-    <button v-show="current < 5" @click="current+=1">next</button>
+          <component :is="currentComponent"></component>
+      <button v-show="current > 1" @click="current-=1">prev</button>
+      <button v-show="current < 5" @click="current+=1">next</button>
+    </div>
   </div>
 </template>
 <script>
@@ -28,7 +30,13 @@ export default {
     ProgressBar
   },
   data: () => ({
-    current: 1
+    current: 1,
+    messages: [
+      'Choose your pricing plan',
+      'Create an account',
+      'Job Detail',
+      'Review Job'
+    ]
   }),
   computed: {
     currentComponent() {
@@ -39,14 +47,21 @@ export default {
       return () => import('@/pages/post/step/Step'+this.current)
     },
     currentMessage() {
-
+      return this.messages[this.current-1]
     }
   }
 }
 </script>
 
 <style scoped>
+.post {
+  background: #F0F3FA;
+}
 .content {
-  display: inline-block;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
