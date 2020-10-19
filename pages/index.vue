@@ -8,7 +8,7 @@
 import MainSearch from "@/components/Main/MainSearch";
 export default {
   components: {MainSearch}
-}
+} 
 </script>
 <style>
  body {
