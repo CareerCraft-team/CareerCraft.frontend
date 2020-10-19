@@ -11,17 +11,17 @@
           <div class="login-fields">
             <div class="login-field">
               <label for="login">USERNAME OR EMAIL</label>
-              <input id="login" type="email" placeholder="Enter your username or email address">
+              <input id="login" type="email" v-model="email" placeholder="Enter your username or email address">
             </div>
             <div class="login-field">
               <label for="password">PASSWORD</label>
-              <input type="password" placeholder="Enter your password" id="password">
+              <input type="password" v-model="password" placeholder="Enter your password" id="password">
             </div>
             <div class="login-end">
               <p><input type="checkbox">Remember me</p>
               <p style="color: gray">Forgot password?</p>
             </div>
-            <button class="btn-login">LOGIN</button>
+            <button class="btn-login" @click="onLogin">LOGIN</button>
           </div>
 
           <div class="login-links">
@@ -35,7 +35,7 @@
             </div>
 
             <div class="login-link">
-              REGISTRATION
+              Don't have an account? <nuxt-link to="/signup">Create one</nuxt-link>
               <div>
                 <button class="btn-reg">APPLICANT</button>
                 <button class="btn-reg">EMPLOYER</button>
@@ -50,7 +50,31 @@
 
 <script>
 export default {
-  name: "index"
+  name: "index",
+  middleware:"auth",
+  auth:"guest",
+  layout: "none",
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
+  methods: {
+    async onLogin() {
+      try {
+          this.$auth.loginWith("local", {
+            data: {
+              email: this.email,
+              password: this.password
+            }
+          });
+          this.$router.push("/");
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
 }
 </script>
 
