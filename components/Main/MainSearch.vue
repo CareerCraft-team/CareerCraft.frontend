@@ -5,7 +5,7 @@
 
       <div class="search-inputs">
 
-        <h1>Over <bold>100.000</bold><sup>+</sup> jobs are waiting for you</h1>
+        <h1>Over <bold>100.000</bold><sup>+</sup> jobs are waiting for you {{$auth.$state.user.first_name}} </h1>
         <div class="search-input">
 
           <div class="input-field">
