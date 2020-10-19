@@ -11,8 +11,18 @@
           <li>Blog</li>
         </ul>
         <div>
-          <button class="btn-post"><nuxt-link to="/post">POST A JOB</nuxt-link></button>
-          <button class="btn-login"><nuxt-link to="/login">LOGIN</nuxt-link></button>
+          <template v-if="$auth.$state.loggedIn">
+              <!-- <nuxt-link to="/profile"> -->
+                <h1>
+                  Hello, {{$auth.$state.employee.first_name}}
+                </h1>
+              <!-- </nuxt-link> -->
+          </template>
+          <template v-else>
+            <button class="btn-post"><nuxt-link to="/post">POST A JOB</nuxt-link></button>
+            <button class="btn-login"><nuxt-link to="/login">LOGIN</nuxt-link></button>
+          </template>
+
         </div>
       </div>
     </div>
