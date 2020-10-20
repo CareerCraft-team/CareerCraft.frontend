@@ -67,8 +67,6 @@ date_of_birth
 <script>
 export default {
   name: "index",
-  middleware:"auth",
-  auth:"guest",
   layout: "none",
   data() {
     return {
